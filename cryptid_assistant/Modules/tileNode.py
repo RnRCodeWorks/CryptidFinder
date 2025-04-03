@@ -4,6 +4,10 @@ class Structure:
         self.color = color
     def __repr__(self):
         return f"{self.color} {self.structure_type}"
+    def __eq__(self, other):
+        if isinstance(other, Structure):
+            return (self.structure_type, self.color) == (other.structure_type, other.color)
+        return False
 
 class TileNode:
     # terrain_type = (w)ater, (m)ountain, (s)wamp, (f)orest, (d)esert

@@ -1,4 +1,4 @@
-from cryptid_assistant.Modules import tile, tileNode, gameMap
+from cryptid_assistant.Modules import tile, tileNode, gameMap, solutionFinder
 from Config import tile_layouts, setup_cards
 
 def generate_tiles():
@@ -21,5 +21,21 @@ def generate_game(key, player_count):
         return "Invalid player count"
     return gameMap.GameMap(key, generate_tiles(), player_count)
 
-game_map = generate_game(615432, 3)
+
+
+game_key = 341256
+player_count = 3
+game_map = generate_game(game_key, player_count)
 game_map.populate_map()
+solution = solutionFinder.SolutionFinder(game_map)
+
+valid_answers = solution.solve()
+game_key = list(str(game_key))
+print(f"""
+Based on the tile configuration:
+{game_key[0]}       {game_key[1]}
+{game_key[2]}       {game_key[3]}
+{game_key[4]}       {game_key[5]}
+With {player_count} players, the solution{ 's are' if len(valid_answers) > 1 else ' is'}:
+{valid_answers}
+""")

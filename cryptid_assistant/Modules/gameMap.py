@@ -21,11 +21,11 @@ class GameMap:
 
     def position_stones(self):
             for color_key, coords in self.standing_stones.items():
-                self.aligned_tiles[coords[0]][coords[1]].add_structure(self.standing_stone_key, color_key)
+                self.aligned_tiles[coords[1]][coords[0]].add_structure(self.standing_stone_key, color_key)
 
     def position_shacks(self):
             for color_key, coords in self.abandoned_shacks.items():
-                self.aligned_tiles[coords[0]][coords[1]].add_structure(self.abandoned_shack_key, color_key)
+                self.aligned_tiles[coords[1]][coords[0]].add_structure(self.abandoned_shack_key, color_key)
 
     def populate_map(self):
         for index in self.inverted_tiles:
