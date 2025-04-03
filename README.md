@@ -7,4 +7,4 @@ General Overview:
 * A map consists of 6 tiles placed in rows of 2
 * Each tile consists of 3 rows of 6 hexagons
 * Each player has a different rule book that contains 96 possible rules for where the cryptid could be
-      * Each map will list the associated rule per player to use
+* Each map will list the associated rule per player to use
