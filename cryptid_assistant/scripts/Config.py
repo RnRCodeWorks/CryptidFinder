@@ -2,31 +2,31 @@ tile_layouts ={
     1:[
         ['w','w','w','w','f','f'],
         ['s','s','w','d','f','f'],
-        ['s','s','d','d|cougar','d|cougar','f|cougar']
+        ['s', 's', 'd', 'd|bear', 'd|bear', 'f|bear']
     ],
     2:[
-        ['s|bear','f|bear','f|bear','f','f','f'],
+        ['s|cougar', 'f|cougar', 'f|cougar', 'f', 'f', 'f'],
         ['s','s','f','d','d','d'],
         ['s','m','m','m','m','d']
     ],
     3:[
         ['s','s','f','f','f','w'],
-        ['s|bear','s|bear','f','m','w','w'],
-        ['m|bear','m','m','m','w','w']
+        ['s|cougar', 's|cougar', 'f', 'm', 'w', 'w'],
+        ['m|cougar', 'm', 'm', 'm', 'w', 'w']
     ],
     4:[
         ['d','d','m','m','m','m'],
-        ['d','d','m','w','w','w|bear'],
-        ['d','d','d','f','f','f|bear']
+        ['d', 'd', 'm', 'w', 'w', 'w|cougar'],
+        ['d', 'd', 'd', 'f', 'f', 'f|cougar']
     ],
     5:[
         ['s','s','s','m','m','m'],
-        ['s','d','d','w','m','m|cougar'],
-        ['d','d','w','w','w|cougar','w|cougar']
+        ['s', 'd', 'd', 'w', 'm', 'm|bear'],
+        ['d', 'd', 'w', 'w', 'w|bear', 'w|bear']
     ],
     6:[
-        ['d|cougar','d','s','s','s','f'],
-        ['m|cougar','m','s','s','f','f'],
+        ['d|bear', 'd', 's', 's', 's', 'f'],
+        ['m|bear', 'm', 's', 's', 'f', 'f'],
         ['m','w','w','w','w','f']
     ]
 }
