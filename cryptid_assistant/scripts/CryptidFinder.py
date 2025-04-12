@@ -1,5 +1,6 @@
 from cryptid_assistant.Modules import tile, tileNode, gameMap, solutionFinder
-from Config import tile_layouts, setup_cards
+from cryptid_assistant.scripts.Config import tile_layouts
+
 
 def generate_tiles():
     generated_tiles = []
@@ -24,13 +25,14 @@ def generate_game(key, player_count):
 
 
 game_key = 341256
-player_count = 3
+player_count = 4
 game_map = generate_game(game_key, player_count)
 game_map.populate_map()
 solution = solutionFinder.SolutionFinder(game_map)
 
 valid_answers = solution.solve()
 game_key = list(str(game_key))
+
 print(f"""
 Based on the tile configuration:
 {game_key[0]}       {game_key[1]}
