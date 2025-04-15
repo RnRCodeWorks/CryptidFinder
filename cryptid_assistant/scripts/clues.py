@@ -1,123 +1,380 @@
 from cryptid_assistant.Modules.tileNode import Structure
+
 STANDING_STONE = 'standing_stone'
 ABANDONED_SHACK = 'abandoned_shack'
-alpha = {
-    1: {
+
+base_clues = [
+    {
         'terrain': [],
         'structure': [],
         'territory': ['bear'],
         'range': [0, 2]
-    },
-    2: {
-        'terrain':['w','m'],
-        'structure':[],
-        'territory':[],
+    }, {
+        'terrain': ['w', 'm'],
+        'structure': [],
+        'territory': [],
         'range': [0]
-    },
-    3: {
+    }, {
         'terrain': ['m'],
         'structure': [],
         'territory': [],
         'range': [0, 1]
-    },
-    4: {},
-    5: {},
-    6: {},
-    7: {},
-    8: {},
-    9: {
+    }, {
         'terrain': ['s', 'm'],
         'structure': [],
         'territory': [],
         'range': [0]
-    },
-    10: {
+    }, {
         'terrain': ['f', 'w'],
         'structure': [],
         'territory': [],
         'range': [0]
-    },
-    11: {},
-    12: {
+    }, {
         'terrain': ['f'],
         'structure': [],
         'territory': [],
         'range': [0, 1]
-    },
-    13: {
+    }, {
         'terrain': [],
         'structure': [Structure(STANDING_STONE, 'white'), Structure(ABANDONED_SHACK, 'white')],
         'territory': [],
         'range': [0, 3]
-    },
-    14: {},
-    15: {},
-    16: {},
-    17: {
+    }, {
         'terrain': [],
         'structure': [],
         'territory': ['cougar'],
         'range': [0, 2]
-    },
-    18: {
+    }, {
         'terrain': [],
         'structure': [Structure(STANDING_STONE, 'blue'), Structure(ABANDONED_SHACK, 'blue')],
         'territory': [],
         'range': [0, 3]
-    },
-    19: {
+    }, {
         'terrain': ['s'],
         'structure': [],
         'territory': [],
         'range': [0, 1]
-    },
-    20: {
+    }, {
         'terrain': [],
         'structure': [Structure(STANDING_STONE, 'green'), Structure(ABANDONED_SHACK, 'green')],
         'territory': [],
         'range': [0, 3]
-    },
-    84: {
+    }, {
         'terrain': [],
+        'structure': [Structure(ABANDONED_SHACK, 'green'), Structure(ABANDONED_SHACK, 'white'),
+                      Structure(ABANDONED_SHACK, 'blue'), Structure(ABANDONED_SHACK, 'black')],
+        'territory': [],
+        'range': [0, 2]
+    }, {
+        'terrain': ['d', 'w'],
         'structure': [],
-        'territory': ['bear', 'cougar'],
+        'territory': [],
+        'range': [0]
+    }, {
+        'terrain': ['w'],
+        'structure': [],
+        'territory': [],
         'range': [0, 1]
-    }
-}
-beta = {
-    1: {
+    }, {
+        'terrain': ['f', 'm'],
+        'structure': [],
+        'territory': [],
+        'range': [0]
+    }, {
+        'terrain': [],
+        'structure': [Structure(STANDING_STONE, 'black'), Structure(ABANDONED_SHACK, 'black')],
+        'territory': [],
+        'range': [0, 3]
+    }, {
         'terrain': ['d', 's'],
         'structure': [],
         'territory': [],
         'range': [0]
-    },
-    79: {
-        'terrain':[],
-        'structure':[Structure(STANDING_STONE, 'white'),Structure(ABANDONED_SHACK, 'white')],
-        'territory':[],
-        'range': [0,3]
-    }
-}
-gamma = {
-    6: {
-        'terrain': [],
-        'structure': [Structure(STANDING_STONE, 'blue'), Structure(ABANDONED_SHACK, 'blue')],
+    }, {
+        'terrain': ['w', 's'],
+        'structure': [],
         'territory': [],
-        'range': [0, 3]
-    }
-}
-delta = {}
-epsilon = {
-    28: {
+        'range': [0]
+    }, {
         'terrain': [],
-        'structure': [Structure(STANDING_STONE, 'green'),Structure(ABANDONED_SHACK, 'green')],
+        'structure': [Structure(STANDING_STONE, 'green'), Structure(STANDING_STONE, 'white'),
+                      Structure(STANDING_STONE, 'blue'), Structure(STANDING_STONE, 'black')],
         'territory': [],
-        'range': [0, 3]
-    },
-    67: {
+        'range': [0, 2]
+    }, {
+        'terrain': [],
+        'structure': [],
+        'territory': ['bear', 'cougar'],
+        'range': [0, 1]
+    }, {
+        'terrain': ['f', 's'],
+        'structure': [],
+        'territory': [],
+        'range': [0]
+    }, {
+        'terrain': ['d', 'm'],
+        'structure': [],
+        'territory': [],
+        'range': [0]
+    }, {
+        'terrain': ['f', 'd'],
+        'structure': [],
+        'territory': [],
+        'range': [0]
+    }, {
         'terrain': ['d'],
         'structure': [],
         'territory': [],
         'range': [0, 1]
     }
+]
+alpha = {
+    1: base_clues[0],
+    2: base_clues[1],
+    3: base_clues[2],
+    9: base_clues[3],
+    10: base_clues[4],
+    12: base_clues[5],
+    13: base_clues[6],
+    17: base_clues[7],
+    18: base_clues[8],
+    19: base_clues[9],
+    20: base_clues[10],
+    21: base_clues[11],
+    25: base_clues[12],
+    26: base_clues[13],
+    27: base_clues[12],
+    28: base_clues[9],
+    29: base_clues[14],
+    30: base_clues[5],
+    31: base_clues[15],
+    33: base_clues[10],
+    34: base_clues[16],
+    36: base_clues[8],
+    42: base_clues[6],
+    44: base_clues[17],
+    46: base_clues[18],
+    48: base_clues[7],
+    50: base_clues[19],
+    52: base_clues[2],
+    54: base_clues[20],
+    55: base_clues[18],
+    56: base_clues[21],
+    57: base_clues[22],
+    61: base_clues[16],
+    65: base_clues[23],
+    66: base_clues[21],
+    68: base_clues[20],
+    69: base_clues[23],
+    72: base_clues[3],
+    77: base_clues[22],
+    80: base_clues[14],
+    83: base_clues[11],
+    84: base_clues[19],
+    85: base_clues[13],
+    88: base_clues[4],
+    91: base_clues[0],
+    92: base_clues[1],
+    93: base_clues[15],
+    95: base_clues[17]
+}
+beta = {
+    1: base_clues[16],
+    2: base_clues[7],
+    3: base_clues[8],
+    5: base_clues[10],
+    6: base_clues[23],
+    8: base_clues[20],
+    11: base_clues[12],
+    13: base_clues[4],
+    16: base_clues[0],
+    17: base_clues[13],
+    19: base_clues[2],
+    22: base_clues[15],
+    25: base_clues[9],
+    28: base_clues[14],
+    29: base_clues[3],
+    32: base_clues[17],
+    33: base_clues[12],
+    34: base_clues[8],
+    35: base_clues[18],
+    36: base_clues[1],
+    42: base_clues[5],
+    43: base_clues[0],
+    45: base_clues[10],
+    46: base_clues[19],
+    47: base_clues[21],
+    49: base_clues[2],
+    53: base_clues[11],
+    54: base_clues[9],
+    58: base_clues[15],
+    61: base_clues[13],
+    62: base_clues[4],
+    64: base_clues[6],
+    65: base_clues[18],
+    66: base_clues[7],
+    67: base_clues[19],
+    71: base_clues[5],
+    73: base_clues[16],
+    74: base_clues[1],
+    76: base_clues[22],
+    77: base_clues[12],
+    79: base_clues[6],
+    80: base_clues[23],
+    82: base_clues[22],
+    83: base_clues[14],
+    86: base_clues[17],
+    89: base_clues[21],
+    90: base_clues[20],
+    92: base_clues[3]
+}
+gamma = {
+    1: base_clues[8],
+    2: base_clues[13],
+    4: base_clues[20],
+    6: base_clues[8],
+    11: base_clues[10],
+    12: base_clues[18],
+    13: base_clues[4],
+    18: base_clues[21],
+    20: base_clues[16],
+    21: base_clues[22],
+    23: base_clues[2],
+    25: base_clues[15],
+    27: base_clues[5],
+    28: base_clues[6],
+    29: base_clues[19],
+    31: base_clues[17],
+    32: base_clues[3],
+    35: base_clues[10],
+    36: base_clues[5],
+    39: base_clues[1],
+    40: base_clues[6],
+    41: base_clues[1],
+    43: base_clues[14],
+    44: base_clues[0],
+    47: base_clues[15],
+    48: base_clues[16],
+    49: base_clues[7],
+    50: base_clues[7],
+    53: base_clues[19],
+    54: base_clues[0],
+    63: base_clues[18],
+    65: base_clues[11],
+    68: base_clues[23],
+    70: base_clues[17],
+    71: base_clues[11],
+    73: base_clues[13],
+    74: base_clues[22],
+    77: base_clues[14],
+    80: base_clues[21],
+    81: base_clues[23],
+    84: base_clues[9],
+    85: base_clues[12],
+    87: base_clues[4],
+    89: base_clues[20],
+    92: base_clues[12],
+    93: base_clues[2],
+    94: base_clues[9],
+    96: base_clues[3]
+}
+delta = {
+    2: base_clues[0],
+    4: base_clues[2],
+    7: base_clues[22],
+    11: base_clues[12],
+    13: base_clues[0],
+    14: base_clues[9],
+    15: base_clues[10],
+    17: base_clues[11],
+    19: base_clues[14],
+    20: base_clues[13],
+    22: base_clues[15],
+    24: base_clues[1],
+    25: base_clues[3],
+    26: base_clues[23],
+    27: base_clues[16],
+    29: base_clues[15],
+    30: base_clues[5],
+    34: base_clues[21],
+    35: base_clues[17],
+    36: base_clues[6],
+    39: base_clues[20],
+    40: base_clues[3],
+    42: base_clues[9],
+    43: base_clues[8],
+    45: base_clues[18],
+    46: base_clues[23],
+    47: base_clues[2],
+    49: base_clues[18],
+    50: base_clues[4],
+    51: base_clues[16],
+    52: base_clues[11],
+    53: base_clues[1],
+    56: base_clues[6],
+    58: base_clues[19],
+    59: base_clues[20],
+    63: base_clues[7],
+    69: base_clues[17],
+    72: base_clues[7],
+    73: base_clues[8],
+    74: base_clues[14],
+    77: base_clues[5],
+    78: base_clues[12],
+    81: base_clues[21],
+    83: base_clues[19],
+    84: base_clues[13],
+    85: base_clues[10],
+    86: base_clues[4],
+    91: base_clues[22]
+}
+epsilon = {
+    1: base_clues[20],
+    2: base_clues[5],
+    7: base_clues[15],
+    8: base_clues[12],
+    9: base_clues[10],
+    11: base_clues[23],
+    13: base_clues[19],
+    16: base_clues[6],
+    17: base_clues[13],
+    19: base_clues[15],
+    21: base_clues[7],
+    22: base_clues[13],
+    23: base_clues[7],
+    26: base_clues[14],
+    27: base_clues[4],
+    28: base_clues[10],
+    29: base_clues[9],
+    30: base_clues[18],
+    33: base_clues[3],
+    34: base_clues[2],
+    37: base_clues[4],
+    38: base_clues[3],
+    41: base_clues[8],
+    42: base_clues[5],
+    44: base_clues[1],
+    45: base_clues[21],
+    48: base_clues[20],
+    50: base_clues[8],
+    51: base_clues[14],
+    52: base_clues[6],
+    55: base_clues[16],
+    57: base_clues[9],
+    61: base_clues[11],
+    62: base_clues[21],
+    66: base_clues[17],
+    67: base_clues[23],
+    68: base_clues[2],
+    72: base_clues[22],
+    76: base_clues[16],
+    78: base_clues[12],
+    82: base_clues[11],
+    83: base_clues[18],
+    84: base_clues[1],
+    86: base_clues[0],
+    87: base_clues[22],
+    89: base_clues[0],
+    92: base_clues[19],
+    95: base_clues[17]
 }
