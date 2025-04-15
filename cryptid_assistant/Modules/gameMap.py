@@ -10,6 +10,7 @@ class GameMap:
         self.tile_layout = list(str(key))
         self.generated_tiles = generated_tiles
 
+
         self.inverted_tiles = setup_params['inverted']
         self.standing_stones = setup_params['standing_stones']
         self.abandoned_shacks = setup_params['abandoned_shacks']
